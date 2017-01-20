@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="io.github.putrasattvika.jrmcremote">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/mp.app.name"
+        android:supportsRtl="true"
+        android:name="io.github.putrasattvika.jrmcremote.MusicPlayerApplication"
+        android:theme="@style/MP.Theme">
+        <activity
+            android:name="io.github.putrasattvika.jrmcremote.ui.main.MainActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="io.github.putrasattvika.jrmcremote.ui.details.PlayListDetailsActivity"
+            android:screenOrientation="portrait"/>
+
+        <service android:name="io.github.putrasattvika.jrmcremote.player.PlaybackService">
+            <intent-filter>
+                <action android:name="io.github.sattvika.jrmcremote.ACTION.PLAY_TOGGLE"/>
+                <action android:name="io.github.sattvika.jrmcremote.ACTION.PLAY_NEXT"/>
+                <action android:name="io.github.sattvika.jrmcremote.ACTION.PLAY_LAST"/>
+                <action android:name="io.github.sattvika.jrmcremote.ACTION.STOP_SERVICE"/>
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>

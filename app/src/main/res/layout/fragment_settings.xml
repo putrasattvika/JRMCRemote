@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <TextView
+        android:id="@+id/text_view_settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:textColor="?attr/colorAccent"
+        android:text="@string/mp.fragment.title.settings"
+        android:layout_marginTop="179dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/port_text_settings"
+        android:singleLine="true"
+        android:hint="@string/mp.settings.port"
+        android:layout_below="@+id/host_text_settings"
+        android:layout_alignLeft="@+id/host_text_settings"
+        android:layout_alignStart="@+id/host_text_settings"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textUri"
+        android:ems="10"
+        android:id="@+id/host_text_settings"
+        android:hint="@string/mp.settings.host"
+        android:singleLine="true"
+        android:layout_below="@+id/text_view_settings"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="11dp"
+        android:textAlignment="center" />
+
+    <Button
+        android:text="@string/mp.settings.connect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/connect_button_settings"
+        android:textColor="?attr/textColorAlertDialogListItem"
+        android:layout_below="@+id/port_text_settings"
+        android:layout_alignRight="@+id/text_view_settings"
+        android:layout_alignEnd="@+id/text_view_settings"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>

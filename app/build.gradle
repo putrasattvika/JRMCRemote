@@ -1,0 +1,42 @@
+import java.text.SimpleDateFormat
+
+apply plugin: 'com.android.application'
+apply plugin: 'android-apt'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion '25.0.2'
+
+    defaultConfig {
+        applicationId 'io.github.putrasattvika.jrmcremote'
+        minSdkVersion 16
+        targetSdkVersion 22
+        versionCode getVersionCode("$BUILD")
+        versionName "$VERSION"
+        vectorDrawables.useSupportLibrary = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:25.1.0'
+    compile 'com.android.support:design:25.1.0'
+    compile 'com.android.support:recyclerview-v7:25.1.0'
+    compile 'io.reactivex:rxjava:1.1.9'
+    compile 'io.reactivex:rxandroid:1.2.1'
+    compile 'com.jakewharton:butterknife:8.4.0'
+    apt 'com.jakewharton:butterknife-compiler:8.4.0'
+    compile 'uk.co.chrisjenx:calligraphy:2.2.0'
+}
+
+def getVersionCode(build) {
+    String date = new SimpleDateFormat("yyyyMMdd", Locale.getDefault()).format(new Date())
+    return Integer.parseInt(date + build)
+}
